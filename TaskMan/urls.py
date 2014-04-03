@@ -8,9 +8,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'tasks.views.home', name='home'),
-    url(r'^tasks/$', 'tasks.views.tasks', name='tasks'),
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^tasks/$', 'tasks.views.tasks', name='tasks'),
+    url(r'^task/(?P<task_id>\d+)/$', 'tasks.views.task_detail',name='task')
 
 )
 
